@@ -69,13 +69,6 @@ h2 {
     color: #4CAF50; /* Grønn farge for tittelen */
 }
 
-footer {
-    text-align: center;
-    padding: 10px;
-    background-color: #333;
-    color: white;
-}
-
 .button {
     background-color: #4CAF50; /* Grønn bakgrunn */
     color: white; /* Hvit tekst */
@@ -97,13 +90,13 @@ footer {
 }
 
 footer {
+    position: absolute;
+    bottom: 0;
     text-align: center;
     padding: 10px;
     background-color: #333;
     color: white;
-    position: absolute;
     width: 100%;
-    bottom: 0;
 }
 
 .profile-image {
