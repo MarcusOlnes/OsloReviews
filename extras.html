@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oslo Reviews - Restaurantanmeldelser (Honorable mentions)</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1><a href="index.html" id="title-link">Oslo Reviews (Hjem)</a></h1>
+        <input type="text" id="search" placeholder="Søk etter restaurant/sted...">
+    </header>
+
+    <main>
+        <h2>Honorable mentions</h2>
+
+        <button onclick="sortReviewsByRating()">Sorter etter rating</button>
+        <button onclick="sortReviewsByDate()">Sorter etter dato</button>
+
+        <div id="reviews-container">
+
+            <div class="review" data-rating="10" data-dato="2024-07-19">
+                <h3>Golden Doner</h3>
+                <h4>Durum i pita - 19 juli 2024.</h4>
+                <p>Nybakt pita var en veldig bra og lovende start fra øyeblikket jeg kom inn døra! Noe av det beste jeg har smakt!
+                     Veldig hyggelig personale og bra service. Utrolig smakfull og veldig generøs i størrelsen, faen jeg har aldri sett en større bab før liksom.
+                </br>Litt dyr, men det betaler jeg gjerne for den smaken og størrelsen. Kan ha noe med at den norske krona er i shambles ift. den danske. </p>
+                <p>Rating: 10/10</p>
+                <p>Lokasjon: Odense, Danmark:   <a href="https://www.google.com/maps/place/Albanigade 54A, 5000 Odense C, Danmark" target="_blank"> Trykk her for google maps (konkret adresse)!</a></p>
+            </div>
+            </div>
+            <!-- Flere anmeldelser kan legges til her -->
+
+        </div>
+    </main>
+
+<!-- Link til den eksterne JavaScript-filen -->
+<script src="app.js"></script>
+
+   

@@ -1,0 +1,122 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+header {
+    position: relative; /* Endrer posisjon for å tillate absolutt plasserte elementer */
+    background-color: #4CAF50; /* Grønn bakgrunn for header */
+    color: white; /* Hvit tekst */
+    text-align: center;
+    padding: 10px 0;
+
+    /* mobiloptimalisering: */
+    display: flex;
+    flex-direction: column; /* Plasserer tittel og søkefelt vertikalt */
+    align-items: center; /* Sentrerer innholdet */
+}
+
+#search {
+    display: block; /* Endrer fra absolute til block for å unngå overlapping */
+    margin: 10px auto; /* Sentrerer søkefeltet */
+    padding: 5px; /* Polstring */
+    border: none; /* Ingen kantlinje */
+    border-radius: 5px; /* Runde kanter */
+    width: 80%; /* Bredde på søkefeltet */
+    max-width: 300px; /* Maks bredde for søkefeltet */
+}
+
+
+#title-link {
+    color: white; /* Farge på teksten */
+    text-decoration: none; /* Ingen understreking */
+}
+
+main {
+    flex: 1; /* Fyller tilgjengelig plass */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+}
+
+h1 {
+    margin: 0; /* Fjern margin for overskrift */
+}
+
+h2 {
+    color: #333; /* Farge for h2 overskrifter */
+    margin-bottom: 20px; /* Margin under h2 */
+}
+
+.review {
+    background-color: white; /* Hvit bakgrunn for anmeldelser */
+    padding: 15px;
+    border-radius: 5px; /* Runde kanter */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Lett skygge for dybde */
+    margin: 10px 0; /* Margin mellom anmeldelsene */
+    width: 100%; /* Fyller bredden */
+    max-width: 600px; /* Maks bredde for anmeldelser */
+}
+
+.review h3 {
+    margin: 0; /* Fjern margin for anmeldelsestittel */
+    color: #4CAF50; /* Grønn farge for tittelen */
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+}
+
+.button {
+    background-color: #4CAF50; /* Grønn bakgrunn */
+    color: white; /* Hvit tekst */
+    padding: 15px 25px; /* Polstring */
+    text-align: center; /* Sentrer teksten */
+    text-decoration: none; /* Ingen understreking */
+    display: inline-block; /* Gjør lenkene til blokker */
+    margin: 10px; /* Margin mellom knappene */
+    border-radius: 5px; /* Runde kanter */
+    transition: background-color 0.3s; /* Overgangseffekt */
+
+
+    width: 80%; /* Gir knappene en bredde */
+    max-width: 300px; /* Maks bredde for knappene */
+}
+
+.button:hover {
+    background-color: #45a049; /* Mørkere grønn ved hover */
+}
+
+footer {
+    text-align: center;
+    padding: 10px;
+    background-color: #333;
+    color: white;
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+}
+
+.profile-image {
+    width: 200px; /* Bestem bredden på bildet */
+    height: auto; /* Bevarer proporsjonene */
+    border-radius: 50%; /* Runde kanter for å lage en sirkulær profilbildeeffekt */
+    margin: 20px 0; /* Litt margin rundt bildet */
+}
+
+/* CSS for anmeldelsene på indeks-siden */
+.button-container {
+    display: flex;
+    flex-direction: column; /* Plasserer knappene under hverandre */
+    align-items: center; /* Sentrerer innholdet */
+    width: 100%; /* Fyller hele bredden */
+}

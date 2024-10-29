@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Oslo Reviews - Restaurantanmeldelser</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1><a href="index.html" id="title-link">Oslo Reviews (Hjem)</a></h1>
+        <input type="text" id="search" placeholder="Søk etter restaurant/sted...">
+        
+    </header>
+
+    <main>
+        <h2>Anmeldelser</h2> 
+
+        <button onclick="sortReviewsByRating()">Sorter etter rating</button>
+        <button onclick="sortReviewsByDate()">Sorter etter dato (nyeste øverst)</button>
+
+         <!-- Flere anmeldelser kan legges til her -->
+        <div id="reviews-container">
+
+            <div class="review" data-rating="6.5" data-dato="2024-10-17">
+                <h3>Village Tandoori</h3>
+                <h4>Desi Duck med Nimbu Pani - 17 oktober 2024</h4>
+                <p>First of all bra interiør! Over til mat og drikke - den indiske lemonaden (Nimbu Pani) falt IKKE i smak for meg lol, var no rare krydder som fucka det HELT opp for meg, så drakk vann istedenfor.
+                     Den var en av de dyre drikkene også faen, burde bare tatt Fanta eller no og vært fornøyd istedenfor å prøve å være eksperimentell fr.
+                    <br/> Desi Duck var godt, men ikke noe enestående liksom - standard and. God saus til og alt, men igjen ikke noe wow-faktor. Garlic naanen var OK++, smakt mye bedre men ikke dårlig.
+                    <br/>Alt i alt har jeg smakt bedre indisk før, men er ikke et dårlig sted for en koselig kveld ute, og er et safe choice å dra til.   
+                </p>
+                <p>Rating: 6.5/10</p>
+                <p>Lokasjon: Bygdøy allè 65:   <a href="https://www.google.com/maps/dir//Bygd%C3%B8y+all%C3%A9+65,+0265+Oslo/@59.918929,10.6202788,12z/data=!4m8!4m7!1m0!1m5!1m1!1s0x46416dcda7f58a3b:0x124c8d6b4b71d61!2m2!1d10.7026785!2d59.9189547?entry=ttu&g_ep=EgoyMDI0MTAyMy4wIKXMDSoASAFQAw%3D%3D" target="_blank">Trykk her for google maps (konkret adresse)!</a></p>
+            </div>
+
+
+            <div class="review" data-rating="8" data-dato="2024-10-13">
+                <h3>Dronningens Kebab</h3>
+                <h4>Stor kebabrull - 13 oktober 2024</h4>
+                <p>Mye kjøtt og god smak på det! Hadde riktignok mild saus (fruens valg), 
+                    så fikk ikke mulighet til å smake på begge sausene...(men god smak på den milde sausen). Lefsa var ok++
+                    <br/> For at det var "stor kebabrull", var den ikke spesielt stor, kunne lett passa som medium. 
+                    Overall trekker kjøttet opp for meg (kanskje litt mye for den enkelte), hadde ikke skadet med litt mer salat. </p>
+                <p>Rating: 8/10</p>
+                <p>Lokasjon: Skippergata:   <a href="https://www.google.com/maps/place/Skippergata 32, 0154 Oslo" target="_blank">Trykk her for google maps (konkret adresse)!</a></p>
+            </div>
+
+            
+                <div class="review" data-rating="2.5"  data-dato="2024-09-22">
+                    <h3>Kebabtoppen</h3>
+                    <h4>Stor kebab i pita - 22 september 2024</h4>
+                    <p>Ikke akkurat en fulltreffer når det kommer til kebab. Synes stor kebab var liten, veldig mye salat og generelt lite dressing. 
+                        Var relativt dyrt i tillegg. Ville ikke anbefalt, ble ikke mett engang faen... Lite pluss er at jeg i hvert fall ikke fikk matforgiftning,
+                        og det var billig med 1,5 liters drikke for 25 schpenn ekstra.</p>
+                    <p>Rating: 2.5/10</p>
+                    <p>Lokasjon: Alexander Kiellands Plass:   <a href="https://www.google.com/maps/place/Kingos gate 2B, 0457 Oslo" target="_blank">Trykk her for google maps (konkret adresse)!</a></p>
+                </div>
+
+                <div class="review" data-rating="8" data-dato="2024-09-05">
+                    <h3>Burger Shack</h3>
+                    <h4>Berliner meny (burger, fries og drikke) - 5 september 2024.</h4>
+                    <p>Juicy og god 150 grams burger med mye kjøtt! Det er en god biffburger med döner kjøtt på toppen,
+                        hvitløksdressing, cheddardressing, piri piri chilli saus, og salat osv. Alt i alt en veldig smaksrik opplevelse. 
+                        Friesene man får når man kjøper meny er helt standard og ikke noe spesielt, men skuffer ikke. <br />
+                        Liten minus å ikke ha Urge. Føler det lowkey (highkey egt) er nasjonaldrikken til Oslo hvis det hadde vært et selvstendig land.</p>
+                    <p>Rating: 8/10</p>
+                    <p>Lokasjon: Alexander Kiellands Plass:   <a href="https://www.google.com/maps/place/Waldemar Thranes gate 63, 0173 Oslo" target="_blank">Trykk her for google maps (konkret adresse)!</a>.</p>
+                </div>
+    
+        </div>
+    </main>
+
+<!-- Link til den eksterne JavaScript-filen -->
+<script src="app.js"></script>
+
+   
