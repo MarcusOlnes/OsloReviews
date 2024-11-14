@@ -111,3 +111,15 @@ footer {
     align-items: center; /* Sentrerer innholdet */
     width: 100%; /* Fyller hele bredden */
 }
+
+/*Boks for styling av div boks i about*/
+.content-box {
+    background-color: white; /* Hvit bakgrunn for innholdsboksen */
+    padding: 20px; /* Polstring rundt innholdet */
+    border-radius: 5px; /* Runde kanter */
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Lett skygge for dybde */
+    max-width: 600px; /* Maks bredde for boksen */
+    width: 100%; /* Fyller bredden */
+    margin: 20px auto; /* Sentrer boksen med margin */
+}
+
