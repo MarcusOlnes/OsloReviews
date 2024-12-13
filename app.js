@@ -8,8 +8,8 @@ function sortReviewsByRating() {
 
     // Sorter anmeldelsene basert på data-rating attributtet
     reviews.sort((a, b) => {
-        const ratingA = parseInt(a.getAttribute('data-rating'));
-        const ratingB = parseInt(b.getAttribute('data-rating'));
+        const ratingA = parseFloat(a.getAttribute('data-rating'));
+        const ratingB = parseFloat(b.getAttribute('data-rating'));
         return ratingB - ratingA; // Sorterer synkende
     });
 
