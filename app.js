@@ -37,16 +37,42 @@ function sortReviewsByDate() {
     reviews.forEach(review => reviewsContainer.appendChild(review)); // Legg til sorterte anmeldelser
 }
 
-document.getElementById('search').addEventListener('keyup', function() {
-    const searchTerm = this.value.toLowerCase();
-    const reviews = document.querySelectorAll('.review');
+function updateReviewCount() {
+    fetch('reviews.html')
+        .then(response => response.text())
+        .then(html => {
+            const parser = new DOMParser();
+            const doc = parser.parseFromString(html, 'text/html');
+            const reviews = doc.querySelectorAll('#reviews-container .review');
+            const count = reviews.length;
+            const el = document.getElementById('review-count');
+            if (el) {
+                el.textContent = count;
+            }
+        })
+        .catch(err => console.error('Kunne ikke hente anmeldelser:', err));
+}
 
-    reviews.forEach(review => {
-        const restaurantName = review.querySelector('h3').textContent.toLowerCase();
-        if (restaurantName.includes(searchTerm)) {
-            review.style.display = ''; // Vis anmeldelsen
-        } else {
-            review.style.display = 'none'; // Skjul anmeldelsen
-        }
-    });
+document.addEventListener('DOMContentLoaded', function() {
+    // Oppdater antall anmeldelser hvis elementet finnes på siden
+    updateReviewCount();
+
+    // Legg til søkelytter bare på sider som har søkefeltet
+    const searchEl = document.getElementById('search');
+    if (searchEl) {
+        searchEl.addEventListener('keyup', function() {
+            const searchTerm = this.value.toLowerCase();
+            const reviews = document.querySelectorAll('.review');
+
+            reviews.forEach(review => {
+                const h3 = review.querySelector('h3');
+                const restaurantName = h3 ? h3.textContent.toLowerCase() : '';
+                if (restaurantName.includes(searchTerm)) {
+                    review.style.display = ''; // Vis anmeldelsen
+                } else {
+                    review.style.display = 'none'; // Skjul anmeldelsen
+                }
+            });
+        });
+    }
 });
