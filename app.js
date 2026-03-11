@@ -38,19 +38,25 @@ function sortReviewsByDate() {
 }
 
 function updateReviewCount() {
-    fetch('reviews.html')
-        .then(response => response.text())
-        .then(html => {
-            const parser = new DOMParser();
-            const doc = parser.parseFromString(html, 'text/html');
-            const reviews = doc.querySelectorAll('#reviews-container .review');
-            const count = reviews.length;
-            const el = document.getElementById('review-count');
-            if (el) {
-                el.textContent = count;
-            }
-        })
-        .catch(err => console.error('Kunne ikke hente anmeldelser:', err));
+    Promise.all([
+        fetch('reviews.html').then(response => response.text()),
+        fetch('gatekjokken_reviews.html').then(response => response.text())
+    ])
+    .then(([reviewsHtml, gatekjokkenHtml]) => {
+        const parser = new DOMParser();
+        const reviewsDoc = parser.parseFromString(reviewsHtml, 'text/html');
+        const gatekjokkenDoc = parser.parseFromString(gatekjokkenHtml, 'text/html');
+        
+        const reviewsCount = reviewsDoc.querySelectorAll('#reviews-container .review').length;
+        const gatekjokkenCount = gatekjokkenDoc.querySelectorAll('#reviews-container .review').length;
+        const totalCount = reviewsCount + gatekjokkenCount;
+        
+        const el = document.getElementById('review-count');
+        if (el) {
+            el.textContent = totalCount;
+        }
+    })
+    .catch(err => console.error('Kunne ikke hente anmeldelser:', err));
 }
 
 document.addEventListener('DOMContentLoaded', function() {
