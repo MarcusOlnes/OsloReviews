@@ -1,125 +1,166 @@
-body {
-    font-family: Arial, sans-serif;
-    background-color: #f4f4f4;
+* {
     margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+    background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    min-height: 100vh;
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    color: #2c3e50;
 }
 
 header {
-    position: relative; /* Endrer posisjon for å tillate absolutt plasserte elementer */
-    background-color: #4CAF50; /* Grønn bakgrunn for header */
-    color: white; /* Hvit tekst */
+    background: #3498db;
+    padding: 2rem 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
     text-align: center;
-    padding: 10px 0;
-
-    /* mobiloptimalisering: */
-    display: flex;
-    flex-direction: column; /* Plasserer tittel og søkefelt vertikalt */
-    align-items: center; /* Sentrerer innholdet */
-}
-
-#search {
-    display: block; /* Endrer fra absolute til block for å unngå overlapping */
-    margin: 10px auto; /* Sentrerer søkefeltet */
-    padding: 5px; /* Polstring */
-    border: none; /* Ingen kantlinje */
-    border-radius: 5px; /* Runde kanter */
-    width: 80%; /* Bredde på søkefeltet */
-    max-width: 300px; /* Maks bredde for søkefeltet */
-}
-
-
-#title-link {
-    color: white; /* Farge på teksten */
-    text-decoration: none; /* Ingen understreking */
-}
-
-main {
-    flex: 1; /* Fyller tilgjengelig plass */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    padding: 20px;
 }
 
 h1 {
-    margin: 0; /* Fjern margin for overskrift */
+    font-size: 2rem;
+    font-weight: 600;
+    letter-spacing: -0.5px;
+    color: white;
+}
+
+#title-link {
+    color: white;
+    text-decoration: none;
+}
+
+#search {
+    margin-top: 1rem;
+    padding: 0.8rem 1.2rem;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    width: 90%;
+    max-width: 300px;
+    font-size: 0.95rem;
+    transition: all 0.3s;
+}
+
+#search:focus {
+    outline: none;
+    border-color: #3498db;
+    box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 2rem 1rem;
 }
 
 h2 {
-    color: #333; /* Farge for h2 overskrifter */
-    margin-bottom: 20px; /* Margin under h2 */
+    font-size: 1.3rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+    font-weight: 500;
+}
+
+button {
+    padding: 0.8rem 1.5rem;
+    margin: 0.5rem;
+    border: none;
+    border-radius: 8px;
+    background: #3498db;
+    color: white;
+    cursor: pointer;
+    font-size: 0.95rem;
+    transition: all 0.3s;
+}
+
+button:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
 }
 
 .review {
-    background-color: white; /* Hvit bakgrunn for anmeldelser */
-    padding: 15px;
-    border-radius: 5px; /* Runde kanter */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Lett skygge for dybde */
-    margin: 10px 0; /* Margin mellom anmeldelsene */
-    width: 100%; /* Fyller bredden */
-    max-width: 600px; /* Maks bredde for anmeldelser */
+    background: white;
+    padding: 1.5rem;
+    margin: 0.8rem 0;
+    border-radius: 8px;
+    width: 100%;
+    max-width: 600px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    transition: all 0.3s;
+    border-left: 4px solid #3498db;
+}
+
+.review:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 16px rgba(0,0,0,0.12);
 }
 
 .review h3 {
-    margin: 0; /* Fjern margin for anmeldelsestittel */
-    color: #4CAF50; /* Grønn farge for tittelen */
+    font-size: 1.2rem;
+    margin-bottom: 0.5rem;
+    color: #2c3e50;
 }
 
 .button {
-    background-color: #4CAF50; /* Grønn bakgrunn */
-    color: white; /* Hvit tekst */
-    padding: 15px 25px; /* Polstring */
-    text-align: center; /* Sentrer teksten */
-    text-decoration: none; /* Ingen understreking */
-    display: inline-block; /* Gjør lenkene til blokker */
-    margin: 10px; /* Margin mellom knappene */
-    border-radius: 5px; /* Runde kanter */
-    transition: background-color 0.3s; /* Overgangseffekt */
-
-
-    width: 80%; /* Gir knappene en bredde */
-    max-width: 300px; /* Maks bredde for knappene */
+    background: #3498db;
+    color: white;
+    padding: 1rem 2rem;
+    text-decoration: none;
+    border-radius: 8px;
+    display: inline-block;
+    margin: 0.8rem;
+    width: 90%;
+    max-width: 280px;
+    text-align: center;
+    transition: all 0.3s;
+    border: none;
+    cursor: pointer;
+    font-size: 1rem;
 }
 
 .button:hover {
-    background-color: #45a049; /* Mørkere grønn ved hover */
+    background: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
+
+.button-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    margin-top: 1rem;
+}
+
+.content-box {
+    background: white;
+    padding: 2rem;
+    border-radius: 8px;
+    max-width: 600px;
+    width: 100%;
+    margin: 1.5rem auto;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+    line-height: 1.6;
+}
+
+.profile-image {
+    width: 180px;
+    height: 180px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin: 1.5rem 0;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.15);
 }
 
 footer {
     text-align: center;
-    padding: 10px;
-    background-color: #333;
-    color: white;
-    width: 100%;
+    padding: 1.5rem;
+    background: white;
+    color: #666;
+    border-top: 1px solid #e0e0e0;
+    font-size: 0.9rem;
 }
-
-.profile-image {
-    width: 200px; /* Bestem bredden på bildet */
-    height: auto; /* Bevarer proporsjonene */
-    border-radius: 50%; /* Runde kanter for å lage en sirkulær profilbildeeffekt */
-    margin: 20px 0; /* Litt margin rundt bildet */
-}
-
-/* CSS for anmeldelsene på indeks-siden */
-.button-container {
-    display: flex;
-    flex-direction: column; /* Plasserer knappene under hverandre */
-    align-items: center; /* Sentrerer innholdet */
-    width: 100%; /* Fyller hele bredden */
-}
-
-/*Boks for styling av div boks i about*/
-.content-box {
-    background-color: white; /* Hvit bakgrunn for innholdsboksen */
-    padding: 20px; /* Polstring rundt innholdet */
-    border-radius: 5px; /* Runde kanter */
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1); /* Lett skygge for dybde */
-    max-width: 600px; /* Maks bredde for boksen */
-    width: 100%; /* Fyller bredden */
-    margin: 20px auto; /* Sentrer boksen med margin */
-}
-
