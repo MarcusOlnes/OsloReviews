@@ -159,8 +159,8 @@ button:hover {
 footer {
     text-align: center;
     padding: 1.5rem;
-    background: white;
-    color: #666;
-    border-top: 1px solid #e0e0e0;
+    background: #3498db;
+    color: white;
+    border-top: none;
     font-size: 0.9rem;
 }
