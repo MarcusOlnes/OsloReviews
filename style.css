@@ -49,6 +49,34 @@ h1 {
     box-shadow: 0 0 0 3px rgba(52, 152, 219, 0.1);
 }
 
+/* Responsiv iframe-container */
+.map-container {
+    position: relative;
+    width: 100%;
+    height: 300px;
+    margin: 2rem auto;
+    max-width: 640px;
+    border-radius: 8px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+/* Høyere på større skjermer */
+@media (min-width: 768px) {
+    .map-container {
+        height: 420px;
+    }
+}
+
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    border-radius: 8px;
+}
+
 main {
     flex: 1;
     display: flex;
