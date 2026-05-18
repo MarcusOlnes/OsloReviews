@@ -4,4 +4,6 @@ Reviewing just about anything, but I will stray away from big corporations and l
 
 Sorted by the "gatekjøkken" (fast food) section, and a restaurant section. 
 
+Only available in Norwegian at the moment. 
+
 Check out the website for yourself! [Osloreviews.no](https://Osloreviews.no)
