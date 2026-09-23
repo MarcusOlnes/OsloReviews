@@ -51,6 +51,19 @@ function updateReviewCount() {
         const gatekjokkenCount = gatekjokkenDoc.querySelectorAll('#reviews-container .review').length;
         const totalCount = reviewsCount + gatekjokkenCount;
         
+        // Oppdater restaurant counter
+        const restaurantEl = document.getElementById('restaurant-count');
+        if (restaurantEl) {
+            restaurantEl.textContent = reviewsCount;
+        }
+        
+        // Oppdater gatekjøkken counter
+        const gatekjokkenEl = document.getElementById('gatekjokken-count');
+        if (gatekjokkenEl) {
+            gatekjokkenEl.textContent = gatekjokkenCount;
+        }
+        
+        // Oppdater total counter
         const el = document.getElementById('review-count');
         if (el) {
             el.textContent = totalCount;
@@ -59,9 +72,40 @@ function updateReviewCount() {
     .catch(err => console.error('Kunne ikke hente anmeldelser:', err));
 }
 
+function updateExtrasCount() {
+    const extrasContainer = document.getElementById('reviews-container');
+    if (extrasContainer) {
+        const extrasCount = extrasContainer.querySelectorAll('.review').length;
+        const el = document.getElementById('extras-count');
+        if (el) {
+            el.textContent = extrasCount;
+        }
+    }
+}
+
+function updateExtrasCountFromFile() {
+    fetch('extras.html').then(response => response.text())
+    .then(html => {
+        const parser = new DOMParser();
+        const doc = parser.parseFromString(html, 'text/html');
+        const extrasCount = doc.querySelectorAll('#reviews-container .review').length;
+        const el = document.getElementById('extras-count');
+        if (el) {
+            el.textContent = extrasCount;
+        }
+    })
+    .catch(err => console.error('Kunne ikke hente extras:', err));
+}
+
 document.addEventListener('DOMContentLoaded', function() {
     // Oppdater antall anmeldelser hvis elementet finnes på siden
     updateReviewCount();
+    
+    // Oppdater antall extras fra file
+    updateExtrasCountFromFile();
+    
+    // Oppdater antall extras hvis vi er på extras siden (lokal telling)
+    updateExtrasCount();
 
     // Legg til søkelytter bare på sider som har søkefeltet
     const searchEl = document.getElementById('search');
