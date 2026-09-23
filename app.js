@@ -1,4 +1,3 @@
-
 function sortReviewsByRating() {
     // Hent containeren for anmeldelser
     const reviewsContainer = document.getElementById('reviews-container');
@@ -83,6 +82,16 @@ function updateExtrasCount() {
     }
 }
 
+function triggerConfettiBurst() {
+    if (typeof confetti === 'function') {
+        confetti({
+            particleCount: 140,
+            spread: 90,
+            origin: { y: 0.7 }
+        });
+    }
+}
+
 function updateExtrasCountFromFile() {
     fetch('extras.html').then(response => response.text())
     .then(html => {
@@ -106,6 +115,11 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Oppdater antall extras hvis vi er på extras siden (lokal telling)
     updateExtrasCount();
+
+    const confettiButton = document.getElementById('confetti-button');
+    if (confettiButton) {
+        confettiButton.addEventListener('click', triggerConfettiBurst);
+    }
 
     // Legg til søkelytter bare på sider som har søkefeltet
     const searchEl = document.getElementById('search');

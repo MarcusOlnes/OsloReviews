@@ -207,3 +207,20 @@ footer {
     border-top: none;
     font-size: 0.9rem;
 }
+
+.confetti-button {
+    width: min(100%, 430px);
+    max-width: 430px;
+    white-space: normal;
+    line-height: 1.45;
+    padding: 1rem 1.2rem;
+    background: #3498db;
+    border: none;
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.2);
+}
+
+.confetti-button:hover {
+    background: #2980b9;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(52, 152, 219, 0.3);
+}
