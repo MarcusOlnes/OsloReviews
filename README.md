@@ -2,7 +2,7 @@ Minimalistic website design to share my food reviews using Javascript, CSS and H
 
 Reviewing just about anything, but I will stray away from big corporations and large food chains. Aiming for the authentic and local places!
 
-Sorted by the "gatekjøkken" (fast food) section, and a restaurant section. 
+Sorted by the "gatekjøkken" (fast food) section, a restaurant section and one honorable mentions page for great places out of Oslo. 
 
 Only available in Norwegian at the moment. 
 
